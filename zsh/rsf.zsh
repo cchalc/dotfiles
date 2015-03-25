@@ -3,7 +3,7 @@
 # ============ Exports for Madagascar=================
 
 if [[ -d /usr/local/rsf ]] then
-   RSFROOT="/usr/local/rsf/" # If we have madagascar installed, add it
+   RSFROOT="/usr/local/rsf" # If we have madagascar installed, add it
    PYTHONPATH="$RSFROOT/lib"
    PATH="$PATH:/bin"
    MANPATH="$RSFROOT/share/man:`manpath`"
