@@ -5,7 +5,7 @@
 if [[ -d /usr/local/rsf ]] then
    RSFROOT="/usr/local/rsf/" # If we have madagascar installed, add it
    if [[ $?PYTHONPATH ]] then
-       PYTHONPATH="$PYTHONPATH:/lib"
+       PYTHONPATH="$PYTHONPATH:$RSFROOT/lib"
    else
        PYTHONPATH="$PYTHONPATH:$RSFROOT/lib"
    fi
