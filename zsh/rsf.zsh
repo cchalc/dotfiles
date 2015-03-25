@@ -7,7 +7,7 @@ if [[ -d /usr/local/rsf ]] then
    PYTHONPATH="$RSFROOT/lib"
    PATH="$PATH:/bin"
    MANPATH="$RSFROOT/share/man:`manpath`"
-   LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$RSFROOT/lib"
+   LD_LIBRARY_PATH="$RSFROOT/lib"
 fi
 
 
