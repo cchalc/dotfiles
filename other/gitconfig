@@ -1,6 +1,7 @@
 [user]
 	email = chris.chalcraft@gmail.com
 	name = Christopher Chalcraft
+	cchalc = Christopher Chalcraft
 [core]
 	editor = vim
 [push]
