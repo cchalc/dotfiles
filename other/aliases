@@ -10,6 +10,7 @@ alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-di
 alias gst="git status"
 alias less="less -R"
 alias ls=" ls -h --color"
+alias lsl="ls -lrat"
 alias rsync="rsync -avhP"
 alias war="jar -cvvf "
 which pigz 2>&1 >/dev/null && alias gzip="pigz"
