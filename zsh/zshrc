@@ -13,6 +13,7 @@ compinit
 promptinit
 
 test -r $HOME/.aliases && source $HOME/.aliases
+test -r $HOME/.exports_local.zsh && source $HOME/.exports_local.zsh
 test -r $HOME/dotfiles/zsh/rsf.zsh && source $HOME/dotfiles/zsh/rsf.zsh
 
 for i in $HOME/.zsh.d/*; do;
