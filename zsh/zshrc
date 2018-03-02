@@ -19,3 +19,6 @@ test -r $HOME/dotfiles/zsh/rsf.zsh && source $HOME/dotfiles/zsh/rsf.zsh
 for i in $HOME/.zsh.d/*; do;
     test -r "$i" && source "$i"
 done
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
