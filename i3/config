@@ -11,24 +11,27 @@
 
 set $mod Mod4
 
+set $term i3-sensible-terminal
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:DejaVu Sans Mono 10
+#font pango:DejaVu Sans Mono 10
 
 new_window 1pixel
 popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
 
 for_window [class="Xfce4-notifyd"] floating enable
-for_window [class="jetbrains-idea-ce"] floading disable
+#for_window [class="jetbrains-idea-ce"] floading disable
 
 exec --no-startup-id [ $(which clipit) ] && clipit
 exec --no-startup-id [ $(which compton) ] && compton -b
+#exec --no-startup-id [ $(which compton) ] && compton --xredner-sync-fence
 exec --no-startup-id [ $(which connman-notify) ] && connman-notify &
 exec --no-startup-id [ $(which dunst) ] && dunst &
 exec --no-startup-id [ $(which nitrogen) ] && nitrogen --restore
@@ -46,7 +49,17 @@ floating_modifier $mod
 floating_minimum_size 75 x 50
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term -e tmux
+
+#start scratchpad (not working)
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 625 400
+for_window [instance="dropdown"] move position center
+for_window [instance="dropdown"] move scratchpad
+exec --no-startup-id $term -name dropdown -e tmux
+
+bindsym $mod+u [instance="dropdown"] scratchpad show; move position center
 
 # kill focused window
 bindsym $mod+q kill
@@ -134,7 +147,6 @@ bindsym $mod+Shift+0 move container to workspace 10: Chromium
 bindsym $mod+Shift+m move container to workspace m: Music
 bindsym $mod+Shift+x move container to workspace x: Xchat
 bindsyn $mod+Shift+y move container to workspace y: YouTube
-
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
