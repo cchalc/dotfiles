@@ -22,3 +22,6 @@ done
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+#switch on transparent xterm
+[ -n "$XTERM_VERSION" ] && transset-df 0.92 --id "$WINDOWID" >/dev/null
