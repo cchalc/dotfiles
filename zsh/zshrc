@@ -24,4 +24,4 @@ done
 export PATH="$PATH:$HOME/.rvm/bin"
 
 #switch on transparent xterm
-[ -n "$XTERM_VERSION" ] && transset-df 0.92 --id "$WINDOWID" >/dev/null
+#[ -n "$XTERM_VERSION" ] && transset-df 0.92 --id "$WINDOWID" >/dev/null

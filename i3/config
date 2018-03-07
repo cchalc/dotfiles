@@ -54,7 +54,7 @@ floating_minimum_size 75 x 50
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term -e tmux
 
-#start scratchpad (not working)
+#start scratchpad (worked for a bit and then  stopped)
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move position center
@@ -62,6 +62,10 @@ for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -name dropdown -e tmux
 
 bindsym $mod+u [instance="dropdown"] scratchpad show; move position center
+
+# Runs neofetch if installed on first tmux screen
+
+exec_always --no-startup-id "tmux send-keys -t 0:0 'clear && neofetch 2>/dev/null' Enter"
 
 # kill focused window
 bindsym $mod+q kill
@@ -121,34 +125,34 @@ bindsym $mod+a focus parent
 bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1: Terminal
-bindsym $mod+2 workspace 2: Mosh
-bindsym $mod+3 workspace 3: Virtualbox
+bindsym $mod+1 workspace 1:
+bindsym $mod+2 workspace 2:
+bindsym $mod+3 workspace 3:
 bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5: VNC
+bindsym $mod+5 workspace 5:
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8: Keep
-bindsym $mod+9 workspace 9: Firefox
-bindsym $mod+0 workspace 10: Chromium
-bindsym $mod+m workspace m: Music
-bindsym $mod+x workspace x: Xchat
-bindsym $mod+y workspace y: YouTube
+bindsym $mod+8 workspace 8:
+bindsym $mod+9 workspace 9:
+bindsym $mod+0 workspace 10
+bindsym $mod+m workspace m:
+bindsym $mod+x workspace x:
+bindsym $mod+y workspace y:
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1: Terminal
-bindsym $mod+Shift+2 move container to workspace 2: Mosh
-bindsym $mod+Shift+3 move container to workspace 3: Virtualbox
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5: VNC
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8: Keep
-bindsym $mod+Shift+9 move container to workspace 9: Firefox
-bindsym $mod+Shift+0 move container to workspace 10: Chromium
-bindsym $mod+Shift+m move container to workspace m: Music
-bindsym $mod+Shift+x move container to workspace x: Xchat
-bindsyn $mod+Shift+y move container to workspace y: YouTube
+bindsym $mod+Shift+1 move container to workspace 1:
+bindsym $mod+Shift+2 move container to workspace 2:
+bindsym $mod+Shift+3 move container to workspace 3:
+bindsym $mod+Shift+4 move container to workspace 4:
+bindsym $mod+Shift+5 move container to workspace 5:
+bindsym $mod+Shift+6 move container to workspace 6:
+bindsym $mod+Shift+7 move container to workspace 7:
+bindsym $mod+Shift+8 move container to workspace 8:
+bindsym $mod+Shift+9 move container to workspace 9:
+bindsym $mod+Shift+0 move container to workspace 10:
+bindsym $mod+Shift+m move container to workspace m:
+bindsym $mod+Shift+x move container to workspace x:
+bindsyn $mod+Shift+y move container to workspace y:
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
