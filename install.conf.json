@@ -3,6 +3,7 @@
         "link" : {
             "~/.fonts" : "fonts",
             "~/.aliases" : "other/aliases",
+            "~/.exports_local.zsh" : "other/exports_local.zsh",
             "~/.gitconfig": "other/gitconfig"
         },
         "meta" : {
@@ -64,7 +65,8 @@
             "~/.zsh.d/exports.zsh" : "zsh/exports.zsh",
             "~/.zsh.d/prompt.zsh" : "zsh/prompt.zsh",
             "~/.zsh.d/setopt.zsh" : "zsh/setopt.zsh",
-            "~/.zsh.d/rsf.zsh" : "zsh/setopt.zsh",
+            "~/.zsh.d/rsf.zsh" : "zsh/rsf.zsh",
+            "~/.zsh.d/rvm.sh" : "zsh/rvm.sh",
             "~/.zsh.d/z.sh" : "zsh/z.sh",
             "~/.zsh.d/zsh-syntax-highlighting.zsh" : "zsh/zsh-syntax-highlighting.zsh",
             "~/.zshrc" : "zsh/zshrc"

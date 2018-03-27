@@ -14,14 +14,10 @@ promptinit
 
 test -r $HOME/.aliases && source $HOME/.aliases
 test -r $HOME/.exports_local.zsh && source $HOME/.exports_local.zsh
-test -r $HOME/dotfiles/zsh/rsf.zsh && source $HOME/dotfiles/zsh/rsf.zsh
 
 for i in $HOME/.zsh.d/*; do;
     test -r "$i" && source "$i"
 done
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 #switch on transparent xterm
 #[ -n "$XTERM_VERSION" ] && transset-df 0.92 --id "$WINDOWID" >/dev/null
