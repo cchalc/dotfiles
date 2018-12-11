@@ -10,6 +10,6 @@ CONFIG="install.conf.json"
 
 # Ensure those systems using python2/3 get the correct version
 PYTHON="python"
-[ $(which python2) ] && PYTHON="python2"
+[ $(which python3) ] && PYTHON="python3"
 
 $PYTHON "${BASEDIR}${DOTBOT_DIR}${DOTBOT}" -d "${BASEDIR}" -c "${CONFIG}" $@
